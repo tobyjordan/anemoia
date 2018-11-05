@@ -1,0 +1,27 @@
+Elmhurst Regular
+font-family: elmhurst, serif;
+font-weight: 400;
+font-style: normal;
+
+
+Elmhurst Bold
+font-family: elmhurst, serif;
+font-weight: 700;
+font-style: normal;
+
+
+Elmhurst Black
+font-family: elmhurst, serif;
+font-weight: 900;
+font-style: normal;
+
+IBM Plex Mono Regular
+font-family: ibm-plex-mono, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+
+IBM Plex Mono Italic
+font-family: ibm-plex-mono, sans-serif;
+font-weight: 400;
+font-style: italic;

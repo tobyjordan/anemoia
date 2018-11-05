@@ -1,0 +1,232 @@
+/*
+  anemoia.ai - style.css
+  Copyright (C) 2018 Toby Jordan
+*/
+
+
+/*
+  ==> Global styles
+*/
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+.clearboth {
+  clear: both;
+}
+
+
+/*
+  ==> Typography
+*/
+h1 {
+  font-family: elmhurst, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 42px;
+  color: #242424;
+}
+
+h2 {
+  font-family: elmhurst, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 26px;
+  color: #242424;
+}
+
+h3 {
+  font-family: elmhurst, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: #242424;
+}
+
+h4 {
+  font-family: elmhurst, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #242424;
+}
+
+h5 {
+  font-family: elmhurst, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  color: #242424;
+}
+
+p {
+  font-family: ibm-plex-mono, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color: #242424;
+}
+
+ul li {
+  font-family: elmhurst, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  text-decoration: underline;
+  color: #242424;
+}
+
+
+/*
+  ==> Page Layout
+*/
+body {
+  margin: 35px 16.4% 0 16.4%;
+}
+
+section {
+  width: 100%;
+  margin-top: 70px;
+}
+
+section .article-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 30px;
+}
+
+.article-grid article.bigfig {
+  grid-column: 1/5;
+}
+
+.article-grid article.midfig {
+  grid-column: 1/4;
+}
+
+.article-grid aside {
+  grid-column: 4/5;
+  grid-row: 2/6;
+}
+
+section .small-article-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+}
+
+.small-article-grid article {
+  grid-column: 1fr;
+}
+
+/*
+  ==> Element Style
+*/
+
+/* Header */
+header {
+  overflow: hidden;
+}
+
+header h1 {
+  float: left;
+}
+
+header ul {
+  float: right;
+  text-align: right;
+}
+
+/* Section */
+section hr {
+  margin-bottom: 27px;
+  border-color: #242424;
+}
+
+section article .img {
+  border: 1px solid #242424;
+  background-size: cover;
+}
+
+article .art-desc .summary {
+  margin-top: 30px;
+}
+
+aside {
+  border: 1px solid #242424;
+}
+
+/* Section: Layout */
+article.bigfig {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-auto-rows: 340px;
+}
+
+article.bigfig .img {
+  grid-column: 1/2;
+}
+
+article.bigfig .art-desc {
+  grid-column: 2/3;
+}
+
+article.midfig {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-auto-rows: 140px;
+}
+
+article.midfig .img {
+  grid-column: 1/2;
+}
+
+article.midfig .art-desc {
+  grid-column: 2/4;
+}
+
+article.smallfig {
+  position: relative;
+  width: auto;
+  height: 190px;
+}
+
+article.smallfig .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 57px;
+}
+
+article.smallfig .art-desc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 143px;
+}
+
+/* Footer */
+#prefoot-text {
+  margin: 95px 0 70px;
+  text-align: center;
+}
+
+footer {
+  width: 100vw;
+  height: 100px;
+  margin-left: -24.4%;
+  background-color: #242424;
+}
+
+footer p {
+  color: #ffffff;
+  padding: 30px 0 0 20px;
+}
