@@ -230,3 +230,18 @@ footer p {
   color: #ffffff;
   padding: 30px 0 0 20px;
 }
+
+/*
+  ==> Media Queries
+*/
+
+/* Break Point 1 - Desktop-Smaller */
+@media (max-width: 1230px) {
+  body {
+    margin: 35px 9% 0 9%;
+  }
+
+  footer {
+    margin-left: -11%;
+  }
+}
