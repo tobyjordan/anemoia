@@ -244,4 +244,8 @@ footer p {
   footer {
     margin-left: -11%;
   }
+  
+  article.bigfig {
+    grid-auto-rows: 270px;
+  }
 }
