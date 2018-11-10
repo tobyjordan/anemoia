@@ -410,7 +410,7 @@ footer p {
   article.midfig {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 240px 150px;
+    grid-template-rows: 240px 200px;
     grid-row-gap: 10px;
   }
   
