@@ -96,7 +96,7 @@
 
 <footer>
   <p>
-    Anemoia.ai -<br class="mobile-lbreak" /> an open-source, minimalist news-aggregate 
+    Anemoia -<br class="mobile-lbreak" /> an open-source, minimalist news-aggregate 
     <br /><br class="mobile-lbreak" />
     Copyright &copy; 2018 Toby Jordan
   </p>
@@ -106,12 +106,30 @@
 <style>
   /* Section: Latest */
   section.latest article.bigfig .img {
+    {% if latest_feed[0].thumbnail %}
     background-image: url("{{ latest_feed[0].thumbnail }}");
+    {% elif latest_feed[0].logo %}
+    background-image: url("{{ latest_feed[0].logo }}");
+    background-size: 120px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    {% else %}
+    background-color: cyan;
+    {% endif %}
   }
 
   {% for entry in latest_feed[1:] %}
   section.latest article.midfig:nth-child({{ loop.index+1 }}) .img {
+    {% if entry.thumbnail %}
     background-image: url("{{ entry.thumbnail }}");
+    {% elif entry.logo %}
+    background-image: url("{{ entry.logo }}");
+    background-size: 120px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    {% else %}
+    background-color: cyan;
+    {% endif %}
   }
 
   {% endfor %}
@@ -119,19 +137,46 @@
   /* Section: Curated */
   {% for entry in curated_feed %}
   article.smallfig:nth-child({{ loop.index }})>div.img {
+    {% if entry.thumbnail %}
     background-image: url("{{ entry.thumbnail }}");
+    {% elif entry.logo %}
+    background-image: url("{{ entry.logo }}");
+    background-size: 120px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    {% else %}
+    background-color: cyan;
+    {% endif %}
   }
 
   {% endfor %}
 
-  /* Section: Latest */
+  /* Section: More */
   section.tts article.bigfig .img {
+    {% if more_feed[0].thumbnail %}
     background-image: url("{{ more_feed[0].thumbnail }}");
+    {% elif more_feed[0].logo %}
+    background-image: url("{{ more_feed[0].logo }}");
+    background-size: 120px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    {% else %}
+    background-color: cyan;
+    {% endif %}
   }
 
   {% for entry in more_feed[1:] %}
   section.tts article.midfig:nth-child({{ loop.index+1 }}) .img {
+    {% if entry.thumbnail %}
     background-image: url("{{ entry.thumbnail }}");
+    {% elif entry.logo %}
+    background-image: url("{{ entry.logo }}");
+    background-size: 120px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    {% else %}
+    background-color: cyan;
+    {% endif %}
   }
 
   {% endfor %}
