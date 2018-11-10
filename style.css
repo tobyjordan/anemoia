@@ -156,6 +156,10 @@ article .art-desc .summary {
   margin-top: 30px;
 }
 
+article span {
+  display: none;
+}
+
 aside {
   border: 1px solid #242424;
 }
@@ -289,6 +293,44 @@ footer p {
   article .art-desc .summary {
     margin-top: 20px;
   }
+
+  article span {
+    display: none;
+  }
+
+  article.smallfig h4 {
+    font-size: 18px;
+  }
+
+  article.smallfig h5 {
+    font-size: 13px;
+  }
+
+  section .small-article-grid {
+    display: block;
+  }
+
+  article.smallfig {
+    position: relative;
+    width: auto;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+
+  article.smallfig .img {
+    display: none;
+    position: relative;
+    height: 0px;
+  }
+
+  article.smallfig .art-desc {
+    position: relative;
+    top: 0;
+  }
+
+  article.smallfig .art-desc span {
+    display: inline;
+  }
 }
 
 /* Break point 2 - Mobile */
@@ -316,6 +358,14 @@ footer p {
     font-style: normal;
     font-size: 11px;
     color: #242424;
+  }
+
+  article.smallfig h4 {
+    font-size: 13px;
+  }
+
+  article.smallfig h5 {
+    font-size: 11px;
   }
 
   section .article-grid {
