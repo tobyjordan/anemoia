@@ -50,10 +50,10 @@ class NewsAggregator:
       Args:
         summary (string): untruncated summary from feedparser object.
     """
-    if len(entry.summary) > 86:
-      return ((entry.summary[:75] if entry.summary[:75][-1] != " " else entry.summary[:74]) + '...')
+    if len(summary) > 86:
+      return ((summary[:75] if summary[:74][-1] != " " else summary[:75]) + '...')
     else:
-      return entry.summary
+      return summary
 
   @staticmethod
   def datetime_from_string(date):
@@ -64,6 +64,17 @@ class NewsAggregator:
     _date = date.replace("EDT", "UTC-5").replace("EST", "UTC-5")
     _date = parser.parse(_date).astimezone(pytz.utc)
     return _date
+
+  @staticmethod
+  def get_thumbnail(entry):
+    """Given a string, return a python datetime object.
+      Args:
+        entry (feedparser.FeedParserDict): Entry from which to extract a thumbnail URL.
+    """
+    try:
+      return entry.media_thumbnail[0]["url"]
+    except Exception:
+      return "#"
 
   @staticmethod
   def feed_to_object(parsed_feed):
@@ -77,7 +88,7 @@ class NewsAggregator:
       "entries": [
         {
           "title": entry.title,
-          "thumbnail": entry.media_thumbnail[0]["url"] if media_thumbnail in entry.keys() else "#"
+          "thumbnail": NewsAggregator.get_thumbnail(entry),
           "link": entry.link,
           "summary": NewsAggregator.format_summary(entry.summary),
           "date": NewsAggregator.datetime_from_string(
