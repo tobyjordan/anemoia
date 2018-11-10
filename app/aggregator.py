@@ -1,5 +1,5 @@
 """
-  anemoia.ai - aggregator.py
+  anemoia - aggregator.py
   Copyright (C) 2018 Toby Jordan
 """
 
@@ -17,7 +17,9 @@ class NewsAggregator:
     self._default_feeds = [
       "http://feeds.reuters.com/reuters/UKTopNews",
       "http://feeds.bbci.co.uk/news/rss.xml",
-      "https://www.nasa.gov/rss/dyn/breaking_news.rss"
+      "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+      "http://www.wsj.com/xml/rss/3_7085.xml",
+      "https://www.aljazeera.com/xml/rss/all.xml"
     ]
 
   def get_latest(self, feeds=None):
@@ -31,6 +33,7 @@ class NewsAggregator:
       for entry in _feed["entries"]:
         _entry = entry
         _entry["source"] = _feed["name"]
+        _entry["logo"] = _feed["logo"]
         entries.append(_entry)
 
     entries.sort(key=lambda e: e["date"], reverse=True)
@@ -67,14 +70,31 @@ class NewsAggregator:
 
   @staticmethod
   def get_thumbnail(entry):
-    """Given a string, return a python datetime object.
+    """Given an RSS entry, return a thumbnail if one exists.
       Args:
         entry (feedparser.FeedParserDict): Entry from which to extract a thumbnail URL.
     """
     try:
-      return entry.media_thumbnail[0]["url"]
+      if "media_thumbnail" in entry.keys():
+        return entry["media_thumbnail"][0]["url"]
+      else:
+        return entry["media_content"][0]["url"]
     except Exception:
-      return "#"
+      return None
+
+  @staticmethod
+  def get_feed_logo(feed):
+    """Given a string, return a python datetime object.
+      Args:
+        feed (feedparser.FeedParserDict): Feed from which to extract a logo URL.
+    """
+    try:
+      if "href" in feed["image"].keys():
+        return feed["image"]["href"]
+      else:
+        return feed["image"]["link"]
+    except Exception:
+      return None
 
   @staticmethod
   def feed_to_object(parsed_feed):
@@ -84,6 +104,7 @@ class NewsAggregator:
     """
     return {
       "name": parsed_feed.feed.title,
+      "logo": NewsAggregator.get_feed_logo(parsed_feed.feed),
       "subtitle": parsed_feed.feed.subtitle,
       "entries": [
         {
