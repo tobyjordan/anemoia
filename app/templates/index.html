@@ -9,7 +9,7 @@
     <article class="bigfig">
       <div class="img"></div>
       <div class="art-desc">
-        <h3>{{ latest_feed[0]["title"] }}</h3>
+        <h3><a target="_blank" href="{{ latest_feed[0]['link'] }}">{{ latest_feed[0]["title"] }}</a></h3>
         <h4>{{ latest_feed[0]["source"] }}</h4>
         <p class="summary">
           <date>{{ latest_feed[0]["date"] }}: </date>{{ latest_feed[0]["summary"] }}
@@ -21,7 +21,7 @@
     <article class="midfig">
       <div class="img"></div>
       <div class="art-desc">
-        <h3>{{ entry["title"] }}</h3>
+        <h3><a target="_blank" href="{{ entry['link'] }}">{{ entry["title"] }}</a></h3>
         <h4>{{ entry["source"] }}</h4>
         <p class="summary">
           <date>{{ entry["date"] }}: </date>{{ entry["summary"] }}
@@ -46,7 +46,7 @@
       <div class="img"></div>
       <div class="art-desc">
         <h5>{{ article["source"] }}</h5>
-        <h4><span>{{ loop.index }}. </span>{{ article["title"] }}</h4>
+        <h4><a target="_blank" href="{{ article['link'] }}"><span>{{ loop.index }}. </span>{{ article["title"] }}</a></h4>
       </div>
     </article>
     {% endfor %}
@@ -63,7 +63,7 @@
   <article class="bigfig">
       <div class="img"></div>
       <div class="art-desc">
-        <h3>{{ more_feed[0]["title"] }}</h3>
+        <h3><a target="_blank" href="{{ more_feed[0]['link'] }}">{{ more_feed[0]["title"] }}</a></h3>
         <h4>{{ more_feed[0]["source"] }}</h4>
         <p class="summary">
           <date>{{ more_feed[0]["date"] }}: </date>{{ more_feed[0]["summary"] }}
@@ -75,7 +75,7 @@
     <article class="midfig">
       <div class="img"></div>
       <div class="art-desc">
-        <h3>{{ entry["title"] }}</h3>
+        <h3><a target="_blank" href="{{ entry['link'] }}">{{ entry["title"] }}</a></h3>
         <h4>{{ entry["source"] }}</h4>
         <p class="summary">
           <date>{{ entry["date"] }}: </date>{{ entry["summary"] }}
@@ -96,7 +96,7 @@
 
 <footer>
   <p>
-    Anemoia -<br class="mobile-lbreak" /> an open-source, minimalist news-aggregate 
+    Anemoia target="_blank" -<br class="mobile-lbreak" /> an open-source, minimalist news-aggregate 
     <br /><br class="mobile-lbreak" />
     Copyright &copy; 2018 Toby Jordan
   </p>
