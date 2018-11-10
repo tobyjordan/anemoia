@@ -236,7 +236,7 @@ footer p {
 */
 
 /* Break Point 1 - Desktop-Smaller */
-@media (max-width: 1230px) {
+@media (max-width: 1285px) {
   body {
     margin: 35px 9% 0 9%;
   }
