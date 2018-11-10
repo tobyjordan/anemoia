@@ -77,6 +77,7 @@ class NewsAggregator:
       "entries": [
         {
           "title": entry.title,
+          "thumbnail": entry.media_thumbnail[0]["url"] if media_thumbnail in entry.keys() else "#"
           "link": entry.link,
           "summary": NewsAggregator.format_summary(entry.summary),
           "date": NewsAggregator.datetime_from_string(
