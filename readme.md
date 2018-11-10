@@ -1,8 +1,8 @@
-# anemoia.ai
+# anemoia
 Anemoia is an open-source, minimalist news-aggregate.
 
 ## How to use
-Just visit [anemoia.ai](anemoia.ai) to give it a try! *Coming soon...*
+Just visit [anemoia.cc](anemoia.cc) to give it a try! *Coming soon...*
 
 ## Upcoming features
 * User accounts
