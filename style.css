@@ -249,3 +249,143 @@ footer p {
     grid-auto-rows: 270px;
   }
 }
+
+/* Break point 2 - Tablet */
+@media (max-width: 845px) {
+  section .article-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 30px;
+  }
+  
+  .article-grid article.bigfig {
+    grid-column: 1/6;
+  }
+  
+  .article-grid article.midfig {
+    grid-column: 1/6;
+  }
+  
+  .article-grid aside {
+    display: none;
+  }
+
+  article.bigfig {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-auto-rows: 140px;
+  }
+  
+  article.bigfig .img {
+    grid-column: 1/2;
+  }
+  
+  article.bigfig .art-desc {
+    grid-column: 2/4;
+  }
+
+  article .art-desc .summary {
+    margin-top: 20px;
+  }
+}
+
+/* Break point 2 - Mobile */
+@media (max-width: 500px) {
+  h1 {
+    font-family: elmhurst, serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 32px;
+    color: #242424;
+  }
+
+  ul li {
+    font-family: ibm-plex-mono, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10px;
+    text-decoration: underline;
+    color: #242424;
+  }
+
+  h4 {
+    font-family: elmhurst, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11px;
+    color: #242424;
+  }
+
+  section .article-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px;
+  }
+  
+  .article-grid article.bigfig {
+    grid-column: 1;
+  }
+  
+  .article-grid article.midfig {
+    grid-column: 1;
+  }
+  
+  .article-grid aside {
+    display: none;
+  }
+
+  article.bigfig {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px 150px;
+    grid-row-gap: 10px;
+  }
+  
+  article.bigfig .img {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  article.bigfig .art-desc {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  article.midfig {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px 150px;
+    grid-row-gap: 10px;
+  }
+  
+  article.midfig .img {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  article.midfig .art-desc {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+/* Break point 2 - Mobile-Smaller */
+@media (max-width: 330px) {
+  h1 {
+    font-family: elmhurst, serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 26px;
+    color: #242424;
+  }
+
+  article.bigfig {
+    grid-row-gap: 5px;
+  }
+
+  article.midfig {
+    grid-row-gap: 5px;
+  }
+}
