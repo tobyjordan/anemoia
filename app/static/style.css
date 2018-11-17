@@ -40,6 +40,8 @@ h2 {
 }
 
 h3 {
+  margin-top: 60px;
+  margin-bottom: 25px;
   font-family: elmhurst, serif;
   font-weight: 400;
   font-style: normal;
@@ -71,17 +73,26 @@ p {
   color: #242424;
 }
 
-ul li {
+ul li, ol li {
   font-family: ibm-plex-mono, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 13px;
-  text-decoration: underline;
   color: #242424;
 }
 
 a {
   color: #242424;
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: inherit;
+  text-transform: uppercase;
+}
+
+ul.indent {
+  margin-left: 20px;
 }
 
 
@@ -151,6 +162,10 @@ section hr {
   border-color: #242424;
 }
 
+section .tts h3, section.latest h3, section.curated h3 {
+  margin: 0;
+}
+
 section article .img {
   border: 1px solid #242424;
   background-size: cover;
@@ -166,6 +181,15 @@ article span {
 
 aside {
   border: 1px solid #242424;
+}
+
+/* Section: about */
+section.about li {
+  padding-top: 8px;
+}
+
+section.about li:first-child {
+  padding-top: 20px;
 }
 
 /* Section: Layout */
