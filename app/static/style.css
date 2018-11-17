@@ -86,6 +86,10 @@ a {
   text-decoration: underline;
 }
 
+h1 a, h2 a, h3 a, h4 a, h5 a {
+  text-decoration: none;
+}
+
 strong {
   font-weight: inherit;
   text-transform: uppercase;
@@ -162,7 +166,7 @@ section hr {
   border-color: #242424;
 }
 
-section .tts h3, section.latest h3, section.curated h3 {
+section.tts h3, section.latest h3 {
   margin: 0;
 }
 
