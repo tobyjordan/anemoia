@@ -65,7 +65,7 @@ h5 {
   color: #242424;
 }
 
-p {
+p, aside h3 {
   font-family: ibm-plex-mono, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -183,8 +183,20 @@ article span {
   display: none;
 }
 
+/* Aside: advert */
 aside {
   border: 1px solid #242424;
+  position: relative;
+  text-align: center;
+}
+
+aside h2 {
+  margin-top: 140px;
+}
+
+aside p {
+  position: absolute;
+  bottom: 90px;
 }
 
 /* Section: about */
