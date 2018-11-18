@@ -197,6 +197,7 @@ aside h2 {
 aside p {
   position: absolute;
   bottom: 90px;
+  padding: 10px;
 }
 
 /* Section: about */
