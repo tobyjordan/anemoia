@@ -1,0 +1,3 @@
+{% macro moment_format(date, moment=None) -%}
+  {{ moment(date).format("d/m H:M") }}
+{%- endmacro %}

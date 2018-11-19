@@ -1,12 +1,14 @@
 import flask
-import datetime
-import pytz
+from flask_moment import Moment
+
 import aggregator
+
 
 app = flask.Flask("__name__")
 
-entries = aggregator.NewsAggregator().get_latest()
+moment = Moment(app)
 
+entries = aggregator.NewsAggregator().get_latest()
 latest_feed = entries[:5]
 curated_feed = entries[5:9]
 more_feed = entries[10:15]

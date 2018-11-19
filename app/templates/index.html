@@ -1,3 +1,5 @@
+{% import "helpers.html" as helpers %}
+
 {% extends "base.html" %}
 {% block body %}
 <!-- Start of Section - Latest -->
@@ -12,7 +14,7 @@
         <h3><a target="_blank" href="{{ latest_feed[0]['link'] }}">{{ latest_feed[0]["title"] }}</a></h3>
         <h4>{{ latest_feed[0]["source"] }}</h4>
         <p class="summary">
-          <date>{{ latest_feed[0]["date"] }}: </date>{{ latest_feed[0]["summary"] }}
+          <date>{{ helpers.moment_format(latest_feed[0]["date"], moment=moment) }}: </date>{{ latest_feed[0]["summary"] }}
         </p>
       </div>
     </article>
@@ -24,7 +26,7 @@
         <h3><a target="_blank" href="{{ entry['link'] }}">{{ entry["title"] }}</a></h3>
         <h4>{{ entry["source"] }}</h4>
         <p class="summary">
-          <date>{{ entry["date"] }}: </date>{{ entry["summary"] }}
+          <date>{{ helpers.moment_format(entry["date"], moment=moment) }}: </date>{{ entry["summary"] }}
         </p>
       </div>
     </article>
@@ -70,7 +72,7 @@
         <h3><a target="_blank" href="{{ more_feed[0]['link'] }}">{{ more_feed[0]["title"] }}</a></h3>
         <h4>{{ more_feed[0]["source"] }}</h4>
         <p class="summary">
-          <date>{{ more_feed[0]["date"] }}: </date>{{ more_feed[0]["summary"] }}
+          <date>{{ helpers.moment_format(more_feed[0]["date"], moment=moment) }}: </date>{{ more_feed[0]["summary"] }}
         </p>
       </div>
     </article>
@@ -82,7 +84,7 @@
         <h3><a target="_blank" href="{{ entry['link'] }}">{{ entry["title"] }}</a></h3>
         <h4>{{ entry["source"] }}</h4>
         <p class="summary">
-          <date>{{ entry["date"] }}: </date>{{ entry["summary"] }}
+          <date>{{ helpers.moment_format(entry["date"], moment=moment) }}: </date>{{ entry["summary"] }}
         </p>
       </div>
     </article>

@@ -13,6 +13,8 @@
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
   <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
   <title>anemoia</title>
+  {{ moment.include_jquery() }}
+  {{ moment.include_moment() }}
   <link rel="stylesheet" href="https://use.typekit.net/eyz2cik.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
