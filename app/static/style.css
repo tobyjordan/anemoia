@@ -238,6 +238,7 @@ article.midfig .img {
 
 article.midfig .art-desc {
   grid-column: 2/4;
+  overflow: hidden;
 }
 
 article.smallfig {
