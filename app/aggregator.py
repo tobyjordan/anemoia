@@ -53,8 +53,17 @@ class NewsAggregator:
       Args:
         summary (string): untruncated summary from feedparser object.
     """
-    if len(summary) > 86:
-      return ((summary[:75] if summary[:74][-1] != " " else summary[:75]) + '...')
+    
+    # Remove new lines
+    summary = summary.replace('\n', ' ').replace('\r', '')
+
+    # Remove HTML
+    if "<" in summary:
+      summary = summary[:summary.index("<")]
+
+    # Truncate
+    if len(summary) > 250:
+      return ((summary[:250] if summary[:249][-1] != " " else summary[:250]) + '...')
     else:
       return summary
 

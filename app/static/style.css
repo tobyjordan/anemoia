@@ -168,6 +168,8 @@ section hr {
 
 section.tts h3, section.latest h3 {
   margin: 0;
+  max-height: 49px;
+  overflow: hidden;
 }
 
 section article .img {
@@ -176,7 +178,10 @@ section article .img {
 }
 
 article .art-desc .summary {
-  margin-top: 30px;
+  margin-top: 20px;
+  height: 72px;
+  overflow: hidden;
+  line-height: 18px;
 }
 
 article span {
@@ -229,7 +234,7 @@ article.midfig {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 10px;
-  grid-auto-rows: 140px;
+  grid-auto-rows: 170px;
 }
 
 article.midfig .img {
@@ -290,22 +295,31 @@ footer p {
 */
 
 /* Break Point 1 - Desktop-Smaller */
-@media (max-width: 1285px) {
+@media (max-width: 1200px) {
+  
+  /* Small Desktop Layout */
   body {
     margin: 35px 9% 0 9%;
   }
 
-  footer {
-    margin-left: -11%;
-  }
-  
   article.bigfig {
     grid-auto-rows: 270px;
+  }
+
+  article.midfig {
+    grid-auto-rows: 140px;
+  }
+
+  /* Small Desktop Footer */
+  footer {
+    margin-left: -11%;
   }
 }
 
 /* Break point 2 - Tablet */
 @media (max-width: 845px) {
+
+  /* Tablet Grid */
   section .article-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -325,6 +339,7 @@ footer p {
     display: none;
   }
 
+  /* Tablet Article Layout */
   article.bigfig {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -385,6 +400,8 @@ footer p {
 
 /* Break point 2 - Mobile */
 @media (max-width: 500px) {
+
+  /* Mobile Typography */
   h1 {
     font-family: elmhurst, serif;
     font-weight: 700;
@@ -410,18 +427,20 @@ footer p {
     color: #242424;
   }
 
+  /* Mobile Grid */
+  section .article-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px;
+  }
+
+  /* Mobile Layout */
   article.smallfig h4 {
     font-size: 13px;
   }
 
   article.smallfig h5 {
     font-size: 11px;
-  }
-
-  section .article-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: 30px;
   }
   
   .article-grid article.bigfig {
@@ -470,6 +489,7 @@ footer p {
     grid-row: 2;
   }
 
+  /* Mobile Footer */
   footer .mobile-lbreak {
     display: inline;
   }
@@ -481,6 +501,7 @@ footer p {
 
 /* Break point 2 - Mobile-Smaller */
 @media (max-width: 330px) {
+  /* Small Mobile Typography */
   h1 {
     font-family: elmhurst, serif;
     font-weight: 700;
@@ -489,6 +510,7 @@ footer p {
     color: #242424;
   }
 
+  /* Small Mobile Layout */
   article.bigfig {
     grid-row-gap: 5px;
   }
