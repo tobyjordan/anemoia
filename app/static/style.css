@@ -287,7 +287,7 @@ footer .mobile-lbreak {
 
 footer p {
   color: #ffffff;
-  padding: 30px 0 0 20px;
+  padding: 35px 0 0 20px;
 }
 
 /*
@@ -295,7 +295,7 @@ footer p {
 */
 
 /* Break Point 1 - Desktop-Smaller */
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
   
   /* Small Desktop Layout */
   body {
@@ -317,7 +317,7 @@ footer p {
 }
 
 /* Break point 2 - Tablet */
-@media (max-width: 845px) {
+@media (max-width: 920px) {
 
   /* Tablet Grid */
   section .article-grid {
@@ -414,7 +414,7 @@ footer p {
     font-family: ibm-plex-mono, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 10px;
+    font-size: 12px;
     text-decoration: underline;
     color: #242424;
   }
