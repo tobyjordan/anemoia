@@ -228,6 +228,7 @@ article.bigfig .img {
 
 article.bigfig .art-desc {
   grid-column: 2/3;
+  overflow: hidden;
 }
 
 article.midfig {
