@@ -15,7 +15,7 @@
     "http://fortune.com/feed/"
   ],
   "unused": [
-    "http://feeds.mashable.com/Mashable"
-    "http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+    "http://feeds.mashable.com/Mashable",
+    "http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml"
   ]
 }
