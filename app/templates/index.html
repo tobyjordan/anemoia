@@ -2,6 +2,64 @@
 
 {% extends "base.html" %}
 {% block body %}
+<!-- Start of Section - tts -->
+<section class="tts">
+  <h2>Top Stories</h2>
+  <hr>
+
+  <div class="article-grid">
+  <article class="bigfig">
+      <div class="img"></div>
+      <div class="art-desc">
+        <h3><a target="_blank" href="{{ more_feed[0]['link'] }}">{{ more_feed[0]["title"] }}</a></h3>
+        <h4>{{ more_feed[0]["source"] }}</h4>
+        <p class="summary">
+          <date>{{ helpers.moment_format(more_feed[0]["date"], moment=moment) }}: </date>{{ more_feed[0]["summary"] }}
+        </p>
+      </div>
+    </article>
+
+    {% for entry in more_feed[1:] %}
+    <article class="midfig">
+      <div class="img"></div>
+      <div class="art-desc">
+        <h3><a target="_blank" href="{{ entry['link'] }}">{{ entry["title"] }}</a></h3>
+        <h4>{{ entry["source"] }}</h4>
+        <p class="summary">
+          <date>{{ helpers.moment_format(entry["date"], moment=moment) }}: </date>{{ entry["summary"] }}
+        </p>
+      </div>
+    </article>
+    {% endfor %}
+
+    <aside>
+      <h2>Anemoia</h2>
+      <h3>simplify your life</h3>
+      <p>Thank you for using Anemoia, please consider sharing with your friends to support the project ;)</p>
+    </aside>
+  </div>
+
+</section>
+
+<!-- Start of Section - Curated -->
+<section class="curated">
+  <h2>Curated</h2>
+  <hr>
+
+  <div class="small-article-grid">
+    {% for article in curated_feed %}
+    <article class="smallfig">
+      <div class="img"></div>
+      <div class="art-desc">
+        <h5>{{ article["source"] }}</h5>
+        <h4><a target="_blank" href="{{ article['link'] }}"><span>{{ loop.index }}. </span>{{ article["title"] }}</a></h4>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+</section>
+
 <!-- Start of Section - Latest -->
 <section class="latest">
   <h2>Latest</h2>
@@ -36,64 +94,6 @@
       <h2>Anemoia</h2>
       <h3>simplify your life</h3>
       <p>Join today to remove ads like this and support the project.</p>
-    </aside>
-  </div>
-
-</section>
-
-<!-- Start of Section - Curated -->
-<section class="curated">
-  <h2>Curated</h2>
-  <hr>
-
-  <div class="small-article-grid">
-    {% for article in curated_feed %}
-    <article class="smallfig">
-      <div class="img"></div>
-      <div class="art-desc">
-        <h5>{{ article["source"] }}</h5>
-        <h4><a target="_blank" href="{{ article['link'] }}"><span>{{ loop.index }}. </span>{{ article["title"] }}</a></h4>
-      </div>
-    </article>
-    {% endfor %}
-  </div>
-
-</section>
-
-<!-- Start of Section - tts -->
-<section class="tts">
-  <h2>Today's Top Stories</h2>
-  <hr>
-
-  <div class="article-grid">
-  <article class="bigfig">
-      <div class="img"></div>
-      <div class="art-desc">
-        <h3><a target="_blank" href="{{ more_feed[0]['link'] }}">{{ more_feed[0]["title"] }}</a></h3>
-        <h4>{{ more_feed[0]["source"] }}</h4>
-        <p class="summary">
-          <date>{{ helpers.moment_format(more_feed[0]["date"], moment=moment) }}: </date>{{ more_feed[0]["summary"] }}
-        </p>
-      </div>
-    </article>
-
-    {% for entry in more_feed[1:] %}
-    <article class="midfig">
-      <div class="img"></div>
-      <div class="art-desc">
-        <h3><a target="_blank" href="{{ entry['link'] }}">{{ entry["title"] }}</a></h3>
-        <h4>{{ entry["source"] }}</h4>
-        <p class="summary">
-          <date>{{ helpers.moment_format(entry["date"], moment=moment) }}: </date>{{ entry["summary"] }}
-        </p>
-      </div>
-    </article>
-    {% endfor %}
-
-    <aside>
-      <h2>Anemoia</h2>
-      <h3>simplify your life</h3>
-      <p>Thank you for using Anemoia, please consider sharing with your friends to support the project ;)</p>
     </aside>
   </div>
 
