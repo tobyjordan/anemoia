@@ -4,7 +4,6 @@
     "http://feeds.bbci.co.uk/news/world/rss.xml"
   ],
   "top": [
-    "http://feeds.skynews.com/feeds/rss/home.xml",
     "http://feeds.bbci.co.uk/news/rss.xml",
     "http://www.independent.co.uk/news/world/rss"
   ],
@@ -16,6 +15,7 @@
   ],
   "unused": [
     "http://feeds.mashable.com/Mashable",
+    "http://feeds.skynews.com/feeds/rss/home.xml",
     "http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml"
   ]
 }
