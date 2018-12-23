@@ -520,3 +520,8 @@ footer p {
     grid-row-gap: 5px;
   }
 }
+
+/* Temporary moment fix */
+date span {
+  display: block !important;
+}
