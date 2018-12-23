@@ -1,7 +1,9 @@
 {
   "latest": [
     "http://feeds.skynews.com/feeds/rss/world.xml",
-    "http://feeds.bbci.co.uk/news/world/rss.xml"
+    "http://feeds.bbci.co.uk/news/world/rss.xml",
+    "http://feeds.reuters.com/reuters/UKWorldNews",
+    "https://www.aljazeera.com/xml/rss/all.xml"
   ],
   "top": [
     "http://feeds.bbci.co.uk/news/rss.xml",

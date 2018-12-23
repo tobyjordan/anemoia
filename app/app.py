@@ -15,8 +15,8 @@ with open("feeds.json", "r") as f:
   _curated_feeds = _feeds["curated"]
 
 agg = NewsAggregator()
-latest_feed = agg.get_latest(_latest_feeds, count=5)
-curated_feed = agg.get_latest(_curated_feeds, count=4)
+latest_feed = agg.ranked_latest(_latest_feeds, count=5)
+curated_feed = agg.ranked_random(_curated_feeds, count=4)
 top_feed = agg.get_latest(_top_feeds, count=5)
 
 @app.route("/")

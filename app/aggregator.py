@@ -6,7 +6,9 @@
 import feedparser
 from dateutil import parser
 import pytz
+import datetime
 import requests
+import random
 
 
 class NewsAggregator:
@@ -41,7 +43,58 @@ class NewsAggregator:
     entries.sort(key=lambda e: e["date"], reverse=True)
     return entries if count is None else entries[:count]
 
-  def feed_to_object(self, parsed_feed):
+  def ranked_random(self, feeds=None, count=None):
+    """Return latest stories from a list of RSS feeds.
+      Args:
+        feeds (optional, array): An array of rss feed url's as strings.
+    """
+    entries = []
+    for feed in (feeds if feeds else self._default_feeds):
+      _feed = self.feed_to_object(NewsAggregator.parse(feed))
+      for entry in _feed["entries"]:
+        _entry = entry
+        _entry["source"] = _feed["name"]
+        _entry["logo"] = _feed["logo"]
+        entries.append(_entry)
+
+    for entry in entries:
+      if entry["source"] == "Fortune" and random.randint(0, 10) > 6:
+        entries.remove(entry)
+
+    random.shuffle(entries)
+    return entries if count is None else entries[:count]
+
+  def ranked_latest(self, feeds=None, count=None):
+    """Return latest stories from a list of RSS feeds.
+      Args:
+        feeds (optional, array): An array of rss feed url's as strings.
+    """
+    entries = []
+    for feed in (feeds if feeds else self._default_feeds):
+      _feed = self.feed_to_object(NewsAggregator.parse(feed))
+      for entry in _feed["entries"]:
+        _entry = entry
+        _entry["source"] = _feed["name"]
+        _entry["logo"] = _feed["logo"]
+        _entry["score"] = self.generate_score(_entry)
+        entries.append(_entry)
+
+    entries.sort(key=lambda e: e["score"], reverse=False)
+    entries.sort(key=lambda e: e["score"], reverse=False)
+    return entries if count is None else entries[:count]
+
+  def generate_score(self, entry):
+    _diff = (datetime.datetime.timestamp(datetime.datetime.utcnow()) - \
+      datetime.datetime.timestamp(entry["date"])) / 25
+    _rank = {
+      "BBC News - World": 0,
+      "World News - Breaking international news and headlines | Sky News": 15,
+      "Reuters: World News": 40,
+      "Al Jazeera English": 15
+    }
+    return _diff + _rank[entry["source"]]
+
+  def feed_to_object(self, parsed_feed, count=10):
     """Given a feed, returned from feedparser, return a uniform object.
       Args:
         parsed_feed (feedparser.FeedParserDict): Parsed feed, returned from feedparser.
@@ -58,7 +111,7 @@ class NewsAggregator:
           "summary": NewsAggregator.format_summary(entry.summary),
           "date": NewsAggregator.datetime_from_string(
             entry.published if "published" in entry.keys() else entry.date if "date" in entry.keys() else "recent")
-        } for entry in (parsed_feed.entries[0:10] if len(parsed_feed.entries) >= 10 else parsed_feed.entries)
+        } for entry in (parsed_feed.entries[0:count] if len(parsed_feed.entries) >= count else parsed_feed.entries)
       ]
     }
 
