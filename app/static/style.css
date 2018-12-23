@@ -24,7 +24,7 @@
   ==> Typography
 */
 h1 {
-  font-family: elmhurst, serif;
+  font-family: "Crimson Text", serif;
   font-weight: 700;
   font-style: normal;
   font-size: 42px;
@@ -32,7 +32,7 @@ h1 {
 }
 
 h2 {
-  font-family: elmhurst, serif;
+  font-family: "Crimson Text", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 26px;
@@ -42,7 +42,7 @@ h2 {
 h3 {
   margin-top: 60px;
   margin-bottom: 25px;
-  font-family: elmhurst, serif;
+  font-family: "Crimson Text", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
@@ -50,7 +50,7 @@ h3 {
 }
 
 h4 {
-  font-family: elmhurst, serif;
+  font-family: "Crimson Text", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 15px;
@@ -58,7 +58,7 @@ h4 {
 }
 
 h5 {
-  font-family: elmhurst, serif;
+  font-family: "Crimson Text", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 12px;
@@ -66,7 +66,7 @@ h5 {
 }
 
 p, aside h3 {
-  font-family: ibm-plex-mono, sans-serif;
+  font-family: 'IBM Plex Mono', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 13px;
@@ -74,7 +74,7 @@ p, aside h3 {
 }
 
 ul li, ol li {
-  font-family: ibm-plex-mono, sans-serif;
+  font-family: 'IBM Plex Mono', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 13px;
@@ -168,7 +168,7 @@ section hr {
 
 section.tts h3, section.latest h3 {
   margin: 0;
-  max-height: 49px;
+  max-height: 55px;
   overflow: hidden;
 }
 
@@ -404,7 +404,7 @@ footer p {
 
   /* Mobile Typography */
   h1 {
-    font-family: elmhurst, serif;
+    font-family: "Crimson Text", serif;
     font-weight: 700;
     font-style: normal;
     font-size: 32px;
@@ -412,7 +412,7 @@ footer p {
   }
 
   header ul li {
-    font-family: ibm-plex-mono, sans-serif;
+    font-family: 'IBM Plex Mono', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 12px;
@@ -421,7 +421,7 @@ footer p {
   }
 
   h4 {
-    font-family: elmhurst, serif;
+    font-family: "Crimson Text", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 11px;
@@ -504,7 +504,7 @@ footer p {
 @media (max-width: 330px) {
   /* Small Mobile Typography */
   h1 {
-    font-family: elmhurst, serif;
+    font-family: "Crimson Text", serif;
     font-weight: 700;
     font-style: normal;
     font-size: 26px;
