@@ -523,5 +523,5 @@ footer p {
 
 /* Temporary moment fix */
 date span {
-  display: block !important;
+  display: inline !important;
 }
