@@ -14,7 +14,7 @@
         <h3><a target="_blank" href="{{ more_feed[0]['link'] }}">{{ more_feed[0]["title"] }}</a></h3>
         <h4>{{ more_feed[0]["source"] }}</h4>
         <p class="summary">
-          <date>{{ helpers.moment_format(more_feed[0]["date"], moment=moment) }}: </date>{{ more_feed[0]["summary"] }}
+          <date>{{  moment(more_feed[0]["date"]).format("D/M hh:mm a") }}: </date>{{ more_feed[0]["summary"] }}
         </p>
       </div>
     </article>

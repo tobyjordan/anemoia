@@ -13,10 +13,10 @@
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
   <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
   <title>Anemoia</title>
-  {{ moment.include_jquery() }}
-  {{ moment.include_moment() }}
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,700|IBM+Plex+Mono:400,400i" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  {{ moment.include_jquery() }}
+  {{ moment.include_moment() }} 
 </head>
 
 <body>
