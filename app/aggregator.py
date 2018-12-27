@@ -234,3 +234,5 @@ if __name__ == '__main__':
   aggregator.aggregate_curated()
 
   aggregator.handle.close()
+
+  print("Successfully completed execution and updated database.")
