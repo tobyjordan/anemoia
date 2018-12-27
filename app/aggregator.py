@@ -106,8 +106,8 @@ class Aggregator:
       summary = summary[:summary.index("<")]
 
     # Truncate
-    if len(summary) > 250:
-      return ((summary[:250] if summary[:249][-1] != " " else summary[:250]) + '...')
+    if len(summary) > 180:
+      return ((summary[:180] if summary[:179][-1] != " " else summary[:180]) + '...')
     else:
       return summary
 
