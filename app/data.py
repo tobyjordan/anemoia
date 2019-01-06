@@ -44,8 +44,8 @@ class DatabaseHandler:
         );""")
 
         self.c.execute("""CREATE TABLE IF NOT EXISTS subscribers (
-            email STRING,
-            confirmed INTEGER
+            uid PRIMARY KEY AUTO INCREMENT,
+            email STRING
         );""")
 
     def datetime_from_string(self, date):
@@ -117,6 +117,10 @@ class DatabaseHandler:
                 "thumbnail": entry[7]
             })
         return result
+
+    def unsubscribeUser(self, email):
+        self.c.execute("DELETE FROM subscribers WHERE email=?", (email,))
+        self.conn.commit()
 
     def close(self):
         """Close database connection.
