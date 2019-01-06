@@ -1,7 +1,22 @@
 {% import "helpers.html" as helpers %}
-
 {% extends "base.html" %}
+
+{% block bodyfunc %}onload="checkOnLoad()"{% endblock %}
+
 {% block body %}
+
+<!-- Mailing List Prompt -->
+<div class="mailinglist" id="prompt">
+  <p>
+    Register your email and recieve development updates!
+  <button onclick="hideMailingList()">Close</button>
+  </p>
+  <form action="/mailinglist" method="post">
+    <input type="email" placeholder="Enter email..." name="email">
+    <button onclick="signedUp()">Sign up</button>
+  </form>
+</div>
+
 <!-- Start of Section - tts -->
 <section class="tts">
   <h2>Top Stories</h2>
@@ -99,6 +114,8 @@
 
 </section>
 
+
+
 <!-- Define Images -->
 <style>
   /* Section: Latest */
@@ -193,4 +210,5 @@
 
   {% endfor %}
 </style>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 {% endblock %}

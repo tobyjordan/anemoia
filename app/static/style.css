@@ -525,3 +525,48 @@ footer p {
 date span {
   display: inline !important;
 }
+
+/*
+==> Mailing List
+*/
+
+.mailinglist {
+  width: 250px;
+  height: 100px;
+  padding: 10px;
+  position: fixed;
+  bottom: -200px;
+  right: 20px;
+  box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.5);
+  border-radius: 6px;
+  background-color: #fff;
+  z-index: 1;
+  transition: bottom 2s;
+}
+
+.mailinglist p {
+  padding: 0; margin: 16px 0 20px;
+}
+
+.mailinglist input+button {
+  padding: 6px;
+}
+
+.mailinglist input {
+  width: 178px;
+  padding: 5px;
+}
+
+.mailinglist p>button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+
+.mailinglist p>button:hover {
+  color: #ccc;
+}
