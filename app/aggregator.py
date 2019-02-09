@@ -220,15 +220,27 @@ class DatabaseAggregator(NewsAggregator):
 
         super().__init__()
 
-    def aggregate_latest(self):
+    def aggregate_latest(self, check_against=None):
         self.handle.delete_from_table("latest_articles")
-        for article in self.ranked_latest(self._latest_feeds, count=5):
-            self.handle.write_article("latest_articles", article)
+        _aggregated = 0
+        for article in self.ranked_latest(self._latest_feeds, count=15):
+            if _aggregated >= 5:
+                return
+            if isinstance(check_against, type([])):
+                if not article["title"] in check_against:
+                    _aggregated += 1
+                    self.handle.write_article("latest_articles", article)
+            else:
+                _aggregated += 1
+                self.handle.write_article("latest_articles", article)
 
     def aggregate_top(self):
+        _titles = []
         self.handle.delete_from_table("top_articles")
         for article in self.get_latest(self._top_feeds, count=5):
+            _titles.append(article["title"])
             self.handle.write_article("top_articles", article)
+        return _titles
 
     def aggregate_curated(self):
         self.handle.delete_from_table("curated_articles")
@@ -241,8 +253,8 @@ if __name__ == '__main__':
     aggregator = DatabaseAggregator()
 
     # Aggregate stories
-    aggregator.aggregate_latest()
-    aggregator.aggregate_top()
+    top = aggregator.aggregate_top()
+    aggregator.aggregate_latest(check_against=top)
     aggregator.aggregate_curated()
 
     # Close database connection
