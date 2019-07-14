@@ -1,4 +1,4 @@
-# anemoia
+# Anemoia
 Anemoia is an open-source, minimalist news-aggregate.
 
 ## How to use
