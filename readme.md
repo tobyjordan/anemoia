@@ -1,5 +1,5 @@
 # Anemoia
-**_No longer under active development_**
+**_No longer under active development!_**
 Anemoia is an open-source, minimalist news-aggregate.
 
 ## How to use
