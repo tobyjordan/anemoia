@@ -1,5 +1,4 @@
 # Anemoia
-**_No longer under active development!_**
 Anemoia is an open-source, minimalist news-aggregate.
 
 ## How to use
@@ -10,6 +9,3 @@ Anemoia is an open-source, minimalist news-aggregate.
 * User accounts
 * User settings
 * Premium accounts
-
-## Author
-Toby Jordan - [My Github](github.com/tobyjordan)
